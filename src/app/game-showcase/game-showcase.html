@@ -1,0 +1,22 @@
+
+@for (item of games; track item) 
+{
+<div class="bg-[var(--mat-sys-on-surface-popout)] rounded-xl mb-3 p-3 drop-shadow-md">
+    <div class="grid grid-cols-[80%_20%]">
+    <div class="flex">
+        <img class="w-12 h-12 rounded-2xl" src="{{item.cover_url}}">
+        <p class="m-auto ml-3 font-bold">{{item.title}}</p></div>
+        <div>
+            <a href="{{item.url}}">
+                <button class="w-[100%]" matButton="outlined">View</button>
+            </a>
+        </div>
+    </div>
+</div>
+} 
+@if (isLoadingGames) {
+<div class="">
+    <mat-spinner class="m-auto"></mat-spinner>
+    <p class="text-center p-5">Loading Games from Itch...</p>
+</div>
+}
