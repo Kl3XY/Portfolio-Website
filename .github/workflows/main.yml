@@ -12,11 +12,12 @@ jobs:
     steps:
       - name: display env vars
         run: |
-          echo $TEST_VAR
-          echo $ENVIRONMENT_STAGE
-          echo $SSH_KEY
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ../private.key
+          sudo chmod 600 ../private.key
           ssh -i $SSH_KEY root@85.214.6.105
           sh deploy.sh
+        shell: bash
         env:
           ENVIRONMENT_STAGE: ${{ vars.TEST_VARIABLE }}
           TEST_VAR: "Hello from the ting!"
