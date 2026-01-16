@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: display env vars
         run: |
-          echo $TEST_VARIABLE
+          echo $TEST_VAR
+          echo $ENVIRONMENT_STAGE
         env:
           ENVIRONMENT_STAGE: ${{ vars.TEST_VARIABLE }}
+          TEST_VAR: "Hello from the ting!"
 
 
