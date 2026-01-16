@@ -14,8 +14,10 @@ jobs:
         run: |
           echo $TEST_VAR
           echo $ENVIRONMENT_STAGE
+          echo $SSH_KEY
         env:
           ENVIRONMENT_STAGE: ${{ vars.TEST_VARIABLE }}
           TEST_VAR: "Hello from the ting!"
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
 
 
