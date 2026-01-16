@@ -19,8 +19,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo "$TEST_VARIABLE" > ../private.key
-          cat ../private.key
+          echo ${{ secrets.SuperSecret }}
           npm install
 
       - name: Build Node Project
