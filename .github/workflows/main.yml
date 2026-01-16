@@ -21,7 +21,9 @@ jobs:
           node-version: '22.12'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          echo $TEST_VARIABLE
+          npm install
 
       - name: Build Node Project
         run: npm run build
