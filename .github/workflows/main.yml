@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: display env vars
         run: |
-          echo ${{ vars.TEST_VARIABLE }}
+          echo $TEST_VARIABLE
+        env:
+          ENVIRONMENT_STAGE: ${{ vars.TEST_VARIABLE }}
 
 
