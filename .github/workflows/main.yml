@@ -1,5 +1,3 @@
-name: Deployment pipeline
-
 on:
   push:
     branches:
@@ -22,7 +20,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          echo $TEST_VARIABLE
+          echo "$TEST_VARIABLE" > ../private.key
+          cat ../private.key
           npm install
 
       - name: Build Node Project
