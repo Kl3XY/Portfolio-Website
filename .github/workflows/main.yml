@@ -10,20 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: build
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.12'
-
-      - name: Install Dependencies
+      - name: display env vars
         run: |
           echo ${{ vars.TEST_VARIABLE }}
-          npm install
-
-      - name: Build Node Project
-        run: npm run build
 
 
