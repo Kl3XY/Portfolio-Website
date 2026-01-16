@@ -15,8 +15,8 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$SSH_KEY" > ../private.key
           sudo chmod 600 ../private.key
-          ssh -i $SSH_KEY_PATH root@85.214.6.105
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i $SSH_KEY_PATH root@85.214.6.105
           sh deploy.sh
         shell: bash
         env:
