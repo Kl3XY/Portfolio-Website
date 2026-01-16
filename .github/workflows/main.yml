@@ -16,10 +16,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.12'
+          ssh-private-key: ${{ secrets.TEST_VARIABLE }}
 
       - name: Install Dependencies
         run: |
-          echo ${{ secrets.SuperSecret }}
+          echo $ssh-private-key
           npm install
 
       - name: Build Node Project
