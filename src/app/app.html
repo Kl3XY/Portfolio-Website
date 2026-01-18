@@ -4,35 +4,33 @@
 
   </nav>
   <main class="flex-grow">
-    
-    <div class="lg:grid lg:grid-cols-[49%_0.1%_50%] lg:flex lg:h-screen lg:overflow-hidden"> 
+    <div class="lg:grid lg:grid-cols-[30%_0.1%_70%] lg:flex lg:h-screen lg:overflow-hidden"> 
       <div class="p-5 lg:p-30 bg-linear-180 from-violet-250 to-[var(--mat-sys-gradient-color)]">
-        <img class="size-24 lg:size-48 lg:m-0 m-auto rounded-full" src="me.jpg">
+        <img class="size-24 lg:size-48 m-auto rounded-full animate-fadeIn-150" src="me.jpg">
         <h1 class="
           text-center
-          text-7xl
-          lg:text-9xl
+          text-4xl
+          lg:text-5xl
           font-bold 
-          lg:text-left 
-          lg:pb-0
           text-blue-600
           text-transparent
           bg-clip-text
           bg-linear-65 
           from-indigo-500 
           to-pink-500
-          ">Martin<br/>Gaffke</h1>
+          animate-fadeIn-250
+          ">Martin Gaffke</h1>
         <h5 class="
           text-gray-500 font-bold text-2xl 
           text-center 
-          lg:text-left
-          ">Software Developer<br/><span class="text-gray-400">Digital Artist</span></h5>
-        <div class="mt-5 text-center lg:text-left pb-3">
-          <p class="lg:text-xl">I excel at creating websites with intuitive and satisfying user experiences. I prioritse working with Angular in combination with TailwindCSS. I'm not confident using AI and i'll keep it that way.</p>
+          animate-fadeIn-350
+          ">Software Entwickler<br/><span class="text-gray-400">Digitaler Künstler</span></h5>
+        <div class="mt-5 text-center lg:text-left pb-3 animate-fadeIn-350">
+          <p class="lg:text-xl">Mein Schwerpunkt liegt in der Entwicklung von intuitiven und kreativen Benutzeroberflächen sowie dem erstellen von robusten und wiederverwendbaren Code. Als Hobby entwickle ich Videospiele mit verschiedenen Werkzeugen.</p>
         </div>
-        <div class="text-center lg:text-left flex justify-center lg:justify-start">
+        <div class="text-center flex justify-center animate-fadeIn-350">
           @for (item of socials; track item) {
-            <a href="{{item.Url}}" class="text-3xl m-4 p-2 rounded-full drop-shadow-md bg-[var(--mat-sys-on-primary)]">
+            <a href="{{item.Url}}" class="text-3xl m-4 p-2 rounded-full drop-shadow-md bg-[var(--mat-sys-on-primary)] ">
               <fa-icon color="primary" [icon]="item.Icon"/>
             </a>
           }
@@ -40,68 +38,11 @@
       </div>
       <div class="bg-[var(--mat-sys-primary)] invisible lg:visible">.</div>
       <div class="p-5 lg:flex-1 lg:overflow-y-auto">
-        <h1 class="text-3xl lg:text-6xl font-bold">Projects</h1>
-        <div class="p-5">
-          <app-game-showcase></app-game-showcase>
-        </div>
-        <h1 class="text-3xl lg:text-6xl font-bold pt-5">Programming Languages</h1>
-        <div class="p-5">
-          <mat-accordion>
-          @for (item of skills; track item) 
-          {
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title> {{ item.Title }} </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>{{ item.Description }}</p>
-            </mat-expansion-panel>
-          }
-          </mat-accordion>
-        </div> 
-        <h1 class="text-3xl lg:text-6xl font-bold pt-5">Proficiencies</h1>
-        <div class="p-5">
-          <mat-accordion>
-          @for (item of proficiencies; track item) 
-          {
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title> {{ item.Title }} </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>{{ item.Description }}</p>
-            </mat-expansion-panel>
-          } 
-          </mat-accordion>
-        </div>
-        <h1 class="text-3xl lg:text-6xl font-bold pt-5">Qualifications</h1>
-        <div class="p-5">
-          <mat-accordion>
-          @for (item of qualification; track item) 
-          {
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title> {{ item.Title }} </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>Time Period: {{item.FromToWhatTime}}</p>
-              <p>GPA: {{item.GPA}}</p>
-              <hr/>
-              <p class="pt-2">{{item.Description}}</p>
-            </mat-expansion-panel>
-          } 
-          </mat-accordion>
-        </div>
-        <h1 class="text-3xl lg:text-6xl font-bold pt-5">Languages</h1>
-        <div class="p-5">
-          <mat-accordion>
-          @for (item of languages; track item) 
-          {
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title> {{ item.Title }} </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>{{ item.Description }}</p>
-            </mat-expansion-panel>
-          } 
-          </mat-accordion>
+        <div class="animate-fadeIn-100">
+          <h1 class="text-3xl lg:text-6xl font-bold">Projects</h1>
+          <div class="p-5">
+            <app-game-showcase></app-game-showcase>
+          </div>
         </div>
         <footer class="bg-[var(--mat-sys-surface)]">
           <p class="p-5 text-center">(C) 2026 Martin Gaffke - All Rights Reserved</p>
