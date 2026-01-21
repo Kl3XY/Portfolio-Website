@@ -1,5 +1,3 @@
-name: Deployment pipeline
-
 on:
   push:
     branches:
@@ -10,20 +8,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: build
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.12'
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Node Project
-        run: npm run build
+      - name: display env vars
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ../private.key
+          sudo chmod 600 ../private.key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i $SSH_KEY_PATH root@85.214.6.105
+          sh deploy.sh
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+          SSH_KEY_PATH: ${{ github.workspace }}/../private.key
 
 
