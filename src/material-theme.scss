@@ -17,15 +17,17 @@ html {
   height: 100%;
   @include mat.theme((
     color: (
-      primary: mat.$magenta-palette,
-      tertiary: mat.$red-palette,
+      primary: mat.$orange-palette,
+      tertiary: mat.$orange-palette,
     ),
-    typography: Roboto,
+    typography: Rubik,
     density: 0,
   ));
 
-  --mat-sys-on-surface-popout: light-dark(#FFF7F9, #201c20);
-  --mat-sys-gradient-color: light-dark(#fcbced, #3e0046);
+  --mat-sys-on-surface-popout: light-dark(#f5e8e2, #201c20);
+  --mat-sys-gradient-color: light-dark(#fdbe6c, #461a00);
+  --gradient-col-begin: #ff0077;
+  --gradient-col-end: #ff9100;
 }
 
 body {

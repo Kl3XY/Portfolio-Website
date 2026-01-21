@@ -21,6 +21,7 @@ export interface Game {
   url: string
   views_count: number
   earnings: Earning[]
+  description: string
 }
 
 export interface Earning {

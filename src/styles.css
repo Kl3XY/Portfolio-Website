@@ -6,16 +6,16 @@
 @theme {
     --color-mint-500: oklch(0.72 0.11 178);
 
-    --animate-fadeIn-50: fadeIn 50ms ease;  
-    --animate-fadeIn-100: fadeIn 100ms ease;  
-    --animate-fadeIn-150: fadeIn 150ms ease;  
-    --animate-fadeIn-200: fadeIn 200ms ease;  
-    --animate-fadeIn-250: fadeIn 250ms ease;  
-    --animate-fadeIn-300: fadeIn 300ms ease;  
-    --animate-fadeIn-350: fadeIn 350ms ease;  
-    --animate-fadeIn-400: fadeIn 400ms ease;  
-    --animate-fadeIn-450: fadeIn 450ms ease;  
-    --animate-fadeIn-500: fadeIn 500ms ease;  
+    --animate-fadeIn-50: fadeIn 50ms ease-in-out;  
+    --animate-fadeIn-100: fadeIn 100ms ease-in-out;  
+    --animate-fadeIn-150: fadeIn 150ms ease-in-out;  
+    --animate-fadeIn-200: fadeIn 200ms ease-in-out;  
+    --animate-fadeIn-250: fadeIn 250ms ease-in-out;  
+    --animate-fadeIn-300: fadeIn 300ms ease-in-out;  
+    --animate-fadeIn-350: fadeIn 350ms ease-in-out;  
+    --animate-fadeIn-400: fadeIn 400ms ease-in-out;  
+    --animate-fadeIn-450: fadeIn 450ms ease-in-out;  
+    --animate-fadeIn-500: fadeIn 500ms ease-in-out;  
     @keyframes fadeIn {
         0% {
             opacity: 0;
@@ -32,16 +32,14 @@
         }
     }
 
-    --animate-appear: ping 350ms;
-    @keyframes ping {
-    0% {
-        transform: scale(2);
-        opacity: 0;
-    }
-    75%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    --animate-infinite-scroll: 1s infininte-scroll linear infinite;
+    @keyframes infininte-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
 }
 

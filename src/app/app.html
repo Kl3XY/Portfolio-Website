@@ -2,31 +2,37 @@
 <body class="flex flex-col min-h-dvh">
   <nav>
 
+  
+
   </nav>
   <main class="flex-grow">
-    <div class="lg:grid lg:grid-cols-[30%_0.1%_70%] lg:flex lg:h-screen lg:overflow-hidden"> 
-      <div class="p-5 lg:p-30 bg-linear-180 from-violet-250 to-[var(--mat-sys-gradient-color)]">
-        <img class="size-24 lg:size-48 m-auto rounded-full animate-fadeIn-150" src="me.jpg">
+    <div class="md:grid md:grid-cols-[30%_0.1%_70%] md:flex md:h-screen md:overflow-hidden"> 
+      <div class="p-5 md:pt-15 bg-linear-180 from-violet-250 text-center to-[var(--mat-sys-gradient-color)]">
+        <img class="size-24 md:size-48 object-cover m-auto rounded-full animate-fadeIn-150 border-2 border-[var(--gradient-col-end)]" src="me.jpg">
         <h1 class="
-          text-center
+          mt-3
+          mb-1
+          ml-auto
+          mr-auto
+          p-2
+          rounded-md
           text-4xl
-          lg:text-5xl
+          md:text-5xl
           font-bold 
-          text-blue-600
-          text-transparent
-          bg-clip-text
+          text-[var(--mat-sys-surface)]
           bg-linear-65 
-          from-indigo-500 
-          to-pink-500
+          from-[var(--gradient-col-begin)]
+          to-[var(--gradient-col-end)]
           animate-fadeIn-250
+          w-[max-content]
           ">Martin Gaffke</h1>
         <h5 class="
           text-gray-500 font-bold text-2xl 
           text-center 
           animate-fadeIn-350
           ">Software Entwickler<br/><span class="text-gray-400">Digitaler Künstler</span></h5>
-        <div class="mt-5 text-center lg:text-left pb-3 animate-fadeIn-350">
-          <p class="lg:text-xl">Mein Schwerpunkt liegt in der Entwicklung von intuitiven und kreativen Benutzeroberflächen sowie dem erstellen von robusten und wiederverwendbaren Code. Als Hobby entwickle ich Videospiele mit verschiedenen Werkzeugen.</p>
+        <div class="mt-5 pl-15 pr-15 text-center md:text-left pb-3 animate-fadeIn-350">
+          <p class="md:text-xl">Mein Schwerpunkt liegt in der Entwicklung von intuitiven und kreativen Benutzeroberflächen sowie dem erstellen von robusten und wiederverwendbaren Code. Als Hobby entwickle ich Videospiele mit verschiedenen Werkzeugen. Im internet bin ich bekannt als Kl3XY.</p>
         </div>
         <div class="text-center flex justify-center animate-fadeIn-350">
           @for (item of socials; track item) {
@@ -35,18 +41,77 @@
             </a>
           }
         </div>
+        <div class="drop-shadow-md flex justify-center">
+          <button (click)="copyMessage('gaffke.martin@protonmail.com')" value="click to copy" >
+            <h1 matRipple class=" bg-[var(--mat-sys-on-primary)] p-4 rounded-3xl font-medium m-auto cursor-pointer hover:opacity-90"><fa-icon color="primary" [icon]="faAt"/> gaffke.martin@protonmail.com</h1>
+          </button>
+        </div>
       </div>
-      <div class="bg-[var(--mat-sys-primary)] invisible lg:visible">.</div>
-      <div class="p-5 lg:flex-1 lg:overflow-y-auto">
+      <div class="bg-[var(--mat-sys-primary)] invisible md:visible">.</div>
+      <div class="p-5 md:flex-1 md:overflow-y-auto">
+        <header class="sticky top-0 z-50 bg-white/30 backdrop-blur-md h-16 rounded-full">
+          <div class="max-w-7xl mx-auto h-full flex items-center px-6">
+            <button matButton="elevated" class="mr-5" (click)="scroll(Github)">Repositories</button>
+            <button matButton="elevated" class="mr-5" (click)="scroll(hobby)">Projekte</button>
+            <button matButton="elevated" class="mr-5" (click)="scroll(works)">Sonstige Werke</button>
+            <button matButton="elevated" class="mr-5" (click)="scroll(langs)">Sprachen</button>
+          </div>
+        </header>
         <div class="animate-fadeIn-100">
-          <h1 class="text-3xl lg:text-6xl font-bold">Projects</h1>
+          <h1 class="text-3xl md:text-6xl font-bold scroll-m-20" #Github>Repositories</h1>
+          <div class="grid grid-cols-3">
+            @for (item of Repositories; track item) {
+                <div class="p-4 m-2.5 h-32 border-[var(--mat-sys-primary)] border-2 rounded-3xl flex flex-col">
+                    <div>{{item.name}}</div>
+                    <div>{{item.description}}</div>
+                    <a href="{{item.html_url}}" class="mt-auto">
+                        <fa-icon [icon]="faGithub" />
+                    </a>
+                </div>
+            }
+          </div>
+        </div>
+        <div class="animate-fadeIn-100">
+          <h1 class="text-3xl md:text-6xl font-bold scroll-m-20" #hobby>Projekte</h1>
           <div class="p-5">
             <app-game-showcase></app-game-showcase>
           </div>
         </div>
+        <div class="animate-fadeIn-350">
+          <h1 class="text-3xl md:text-6xl font-bold" #langs>Sprachen</h1>
+          <div>
+            Godot
+          </div>
+          <div>
+            Test
+          </div>
+          <div>
+            Test
+          </div>
+          <div>
+            Test
+          </div>
+          <div>
+            Test
+          </div>
+          <div>
+            Test
+          </div>
+          <div>
+            Test
+          </div>
+        </div>
+        <div class="animate-fadeIn-350">
+          <h1 class="text-3xl md:text-6xl font-bold" #works>Sonstige Werke</h1>
+          <div class="p-5">
+            @for (item of werke; track item) {
+              <h1 class="font-bold pb-5">{{item}}</h1>
+            }
+          </div>
+        </div>
         <footer class="bg-[var(--mat-sys-surface)]">
           <p class="p-5 text-center">(C) 2026 Martin Gaffke - All Rights Reserved</p>
-          <p class="p-5 pt-0 text-center">Made with ❤️ in Angular 21</p>
+          <p class="p-5 pt-0 text-center">Made with ❤️ in Angular 21 <a>Github Repo</a></p>
         </footer>
       </div>
     </div>

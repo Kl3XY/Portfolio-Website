@@ -42,6 +42,7 @@ export class GameShowcase implements OnInit{
         published_at: "2021-09-05 07:47:20",
         p_windows: false,
         p_osx: false,
+        description: "Ein, sich in entwicklung befindendes, Action-Abenteuer spiel welches mithilfe von GameMakerStudio 2 entwickelt wird. Nach der fertigstellung von Polaroid, wurde das Projekt angefangen, nach kurzer Zeit habe ich festgestellt das sich Almighty Shield als kompliziertes Projekt entlarvt hat welches mehr als nur zwei wochen Zeit benötigt um fertiggestellt zu werden. 7 Jahre später ist Almighty Shield nachwievor noch stark unter bau, 2026 ist voraussichtlich das Jahr für die erste Demo-Version.\nZwischenzeitlich wurde ein Neu-Anfang in der Godot Game Engine gewagt der aber jedoch abgebrochen wurde.",
         min_price: 0
       },
       {
@@ -62,6 +63,7 @@ export class GameShowcase implements OnInit{
         published_at: "2025-08-03 12:11:20",
         p_windows: true,
         p_osx: false,
+        description: "Ein Vampire Survivors inspiriertes Swarm Survivor spiel welches für den GameMakers Toolkit Game Jam erstellt wurde. Das Spiel wurde in kooperation mit einem zweiten Entwickler in einem Zeitraum von 3 Tagen entwickelt. Ich habe hierfür großteil der Umsetzung übernommen",
         min_price: 0
       },
       {
@@ -82,6 +84,7 @@ export class GameShowcase implements OnInit{
         published_at: "2022-04-07 10:29:35",
         p_windows: false,
         p_osx: false,
+        description: "Mein erstes Videospiel Projekt welches 2019 angefangen wurde und nach zwei wochen bearbeitungszeit beendet wurde. 2022 wurde das Spiel als \"indefinite alpha\" veröffentlicht. Es hat 2023 ein Update namens \"New Stars\" erhalten welches viele Punkte des Spiels verbessert hat.",
         min_price: 0
       }
     ];
