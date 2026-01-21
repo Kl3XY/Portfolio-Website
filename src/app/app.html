@@ -6,18 +6,18 @@
 
   </nav>
   <main class="flex-grow">
-    <div class="md:grid md:grid-cols-[30%_0.1%_70%] md:flex md:h-screen md:overflow-hidden"> 
-      <div class="p-5 md:pt-15 bg-linear-180 from-violet-250 text-center to-[var(--mat-sys-gradient-color)]">
-        <img class="size-24 md:size-48 object-cover m-auto rounded-full animate-fadeIn-150 border-2 border-[var(--gradient-col-end)]" src="me.jpg">
+    <div class="lg:grid lg:grid-cols-[30%_0.1%_70%] lg:flex lg:h-screen lg:overflow-hidden"> 
+      <div class="p-5 lg:pt-15 bg-linear-180 from-violet-250 text-center to-[var(--mat-sys-gradient-color)]">
+        <img class="size-24 lg:size-48 object-cover m-auto rounded-full animate-fadeIn-150 border-2 border-[var(--gradient-col-end)]" src="me.jpg">
         <h1 class="
           mt-3
           mb-1
           ml-auto
           mr-auto
           p-2
-          rounded-md
+          rounded-lg
           text-4xl
-          md:text-5xl
+          lg:text-5xl
           font-bold 
           text-[var(--mat-sys-surface)]
           bg-linear-65 
@@ -31,25 +31,25 @@
           text-center 
           animate-fadeIn-350
           ">Software Entwickler<br/><span class="text-gray-400">Digitaler Künstler</span></h5>
-        <div class="mt-5 pl-15 pr-15 text-center md:text-left pb-3 animate-fadeIn-350">
-          <p class="md:text-xl">Mein Schwerpunkt liegt in der Entwicklung von intuitiven und kreativen Benutzeroberflächen sowie dem erstellen von robusten und wiederverwendbaren Code. Als Hobby entwickle ich Videospiele mit verschiedenen Werkzeugen. Im internet bin ich bekannt als Kl3XY.</p>
+        <div class="mt-5 pl-15 pr-15 text-center lg:text-left pb-3 animate-fadeIn-350">
+          <p class="lg:text-xl">Mein Schwerpunkt liegt in der Entwicklung von intuitiven und kreativen Benutzeroberflächen sowie dem erstellen von robusten und wiederverwendbaren Code. Als Hobby entwickle ich Videospiele mit verschiedenen Werkzeugen. Im internet bin ich bekannt als Kl3XY.</p>
         </div>
         <div class="text-center flex justify-center animate-fadeIn-350">
           @for (item of socials; track item) {
-            <a href="{{item.Url}}" class="text-3xl m-4 p-2 rounded-full drop-shadow-md bg-[var(--mat-sys-on-primary)] ">
+            <a href="{{item.Url}}" class="text-3xl m-4 p-2 rounded-full drop-shadow-lg bg-[var(--mat-sys-on-primary)] ">
               <fa-icon color="primary" [icon]="item.Icon"/>
             </a>
           }
         </div>
-        <div class="drop-shadow-md flex justify-center">
+        <div class="drop-shadow-lg flex justify-center">
           <button (click)="copyMessage('gaffke.martin@protonmail.com')" value="click to copy" >
             <h1 matRipple class=" bg-[var(--mat-sys-on-primary)] p-4 rounded-3xl font-medium m-auto cursor-pointer hover:opacity-90"><fa-icon color="primary" [icon]="faAt"/> gaffke.martin@protonmail.com</h1>
           </button>
         </div>
       </div>
-      <div class="bg-[var(--mat-sys-primary)] invisible md:visible">.</div>
-      <div class="p-5 md:flex-1 md:overflow-y-auto">
-        <header class="sticky top-0 z-50 bg-white/30 backdrop-blur-md h-16 rounded-full">
+      <div class="bg-[var(--mat-sys-primary)] invisible lg:visible">.</div>
+      <div class="p-5 lg:flex-1 lg:overflow-y-auto">
+        <header class="sticky top-0 z-50 bg-white/30 backdrop-blur-lg h-16 rounded-full">
           <div class="h-full flex items-center px-6">
             <button matButton="elevated" class="mr-5 mt-auto mb-auto" (click)="scroll(Github)">Repositories</button>
             <button matButton="elevated" class="mr-5 mt-auto mb-auto" (click)="scroll(hobby)">Projekte</button>
@@ -58,8 +58,9 @@
           </div>
         </header>
         <div class="animate-fadeIn-100">
-          <h1 class="text-3xl md:text-6xl font-bold scroll-m-20" #Github>Repositories</h1>
+          <h1 class="text-3xl lg:text-6xl font-bold scroll-m-20" #Github>Repositories</h1>
           <div class="grid grid-cols-3">
+
             @for (item of Repositories; track item) {
                 <div class="p-4 m-2.5 h-32 border-[var(--mat-sys-primary)] border-2 rounded-3xl flex flex-col">
                     <div>{{item.name}}</div>
@@ -72,14 +73,14 @@
           </div>
         </div>
         <div class="animate-fadeIn-100">
-          <h1 class="text-3xl md:text-6xl font-bold scroll-m-20" #hobby>Projekte</h1>
+          <h1 class="text-3xl lg:text-6xl font-bold scroll-m-20" #hobby>Projekte</h1>
           <div class="p-5">
             <app-game-showcase></app-game-showcase>
           </div>
         </div>
         <!--
         <div class="animate-fadeIn-350">
-          <h1 class="text-3xl md:text-6xl font-bold" #langs>Sprachen</h1>
+          <h1 class="text-3xl lg:text-6xl font-bold" #langs>Sprachen</h1>
           <div>
             Godot
           </div>
@@ -104,7 +105,7 @@
         </div>
         -->
         <div class="animate-fadeIn-350">
-          <h1 class="text-3xl md:text-6xl font-bold" #works>Sonstige Werke</h1>
+          <h1 class="text-3xl lg:text-6xl font-bold" #works>Sonstige Werke</h1>
           <div class="p-5">
             @for (item of werke; track item) {
               <h1 class="font-bold pb-5">{{item}}</h1>

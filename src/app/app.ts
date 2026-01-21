@@ -44,7 +44,8 @@ export class App implements OnInit{
   constructor(
     private http: HttpClient,
     private cd: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
 
   faGithub = faGithub;
@@ -86,6 +87,8 @@ export class App implements OnInit{
   async ngOnInit(): Promise<void> {
     await this.http.get<Repo[]>("https://api.github.com/users/kl3xy/repos").subscribe((data) => {
       this.Repositories = data;
+      this.cdr.markForCheck();
+      console.log(this.Repositories)
     })
     await this.http.get<User>("https://api.github.com/users/kl3xy").subscribe((data) => {
       this.Me = data;
