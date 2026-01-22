@@ -16,7 +16,7 @@ jobs:
           echo "$SSH_KEY" > ../private.key
           sudo chmod 600 ../private.key
           ssh-keyscan -H cicd@kl3xy.dev >> ~/.ssh/known_hosts
-          ssh -i $SSH_KEY_PATH -Y cicd@kl3xy.dev
+          ssh -i $SSH_KEY_PATH -Y kl3xy.dev
           sh deploy.sh
         shell: bash
         env:
