@@ -14,7 +14,7 @@ import { GameShowcase } from './game-showcase/game-showcase';
 import { Social } from './classes/social';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee, faMailBulk, faAt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faYoutube, faXing, faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Proficiency } from './classes/proficiency';
 import { Qualification } from './classes/qualification';
 import { Language } from './classes/language';
@@ -51,6 +51,9 @@ export class App implements OnInit{
   faGithub = faGithub;
   faTwitter = faTwitter;
   faYoutube = faYoutube;
+  faLinkedIn = faLinkedin;
+  faXTwitt = faXTwitter;
+  faXing = faXing;
   faAt = faAt;
 
 
@@ -58,8 +61,10 @@ export class App implements OnInit{
 
   protected readonly socials = [
     new Social("GitHub", "https://Github.com/Kl3XY", faGithub),
-    new Social("Twitter", "https://x.com/Kl3XY", faTwitter),
+    new Social("Twitter", "https://x.com/Kl3XY", faXTwitter),
     new Social("Youtube", "https://www.youtube.com/@Kl3XY_DEV", faYoutube),
+    new Social("Xing", "https://www.xing.com/profile/Martin_Gaffke08994/web_profiles?nwt_nav=profile_icon", faXing),
+    new Social("LinkedIn", "https://www.linkedin.com/in/martin-gaffke-0408b5250/?skipRedirect=true", faLinkedin),
   ]
 
   profs = [
