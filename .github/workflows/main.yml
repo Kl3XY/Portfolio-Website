@@ -19,12 +19,15 @@ jobs:
           ssh-keyscan -H kl3xy.dev >> ~/.ssh/known_hosts
           ssh -i $SSH_KEY_PATH -Y cicd@kl3xy.dev << 'EOF'
             cd deploy
-            sh deploy.sh
+            sudo sh deploy.sh << 'USER'
+              $CICD_PASSWORD
+            USER
           EOF
         shell: bash
         env:
           SSH_KEY: ${{secrets.DEPLOY_SSH_KEY}}
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SSH_KEY_PATH: ${{ github.workspace }}/../private.key
+          CICD_PASSWORD: ${{ secrets.CICD_PASSWORD }}
 
 
