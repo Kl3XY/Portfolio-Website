@@ -80,7 +80,9 @@ export class App implements OnInit{
     "2023: Erste Freelancing erfahrung als Programmer for Hire"
   ]
 
-  games: Game[] = [];
+  isLoadingRepositories = true;
+  
+  games: Root | undefined;
   Repositories: Repo[] = [];
   isLoadingGames = true;
   Me: User | undefined;
@@ -88,11 +90,12 @@ export class App implements OnInit{
     await this.http.get<Repo[]>("https://api.github.com/users/kl3xy/repos").subscribe((data) => {
       this.Repositories = data;
       this.cdr.markForCheck();
-      console.log(this.Repositories)
+      this.isLoadingRepositories = false;
     })
     await this.http.get<User>("https://api.github.com/users/kl3xy").subscribe((data) => {
       this.Me = data;
     })
+  
     this.router.events.subscribe((event) => {
         if (!(event instanceof NavigationEnd)) {
             return;

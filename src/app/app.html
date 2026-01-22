@@ -59,9 +59,9 @@
         </header>
         <div class="animate-fadeIn-100">
           <h1 class="text-3xl lg:text-6xl font-bold scroll-m-20" #Github>Repositories</h1>
-          <div class="grid grid-cols-1 lg:grid-cols-3">
-
-            @for (item of Repositories; track item) {
+          <div class="grid grid-cols-1 lg:grid-cols-3 p-5">
+            @if(isLoadingRepositories == false) {
+              @for (item of Repositories; track item) {
                 <div class="p-4 m-2.5 h-32 border-[var(--mat-sys-primary)] border-2 rounded-3xl flex flex-col">
                     <div>{{item.name}}</div>
                     <div>{{item.description}}</div>
@@ -69,7 +69,15 @@
                         <fa-icon [icon]="faGithub" />
                     </a>
                 </div>
+              }
             }
+            @else {
+              <div>
+              <mat-spinner></mat-spinner>
+              <div>Lade Repositories...</div>
+              </div>
+            }
+            
           </div>
         </div>
         <div class="animate-fadeIn-100">
