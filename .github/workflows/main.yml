@@ -19,9 +19,7 @@ jobs:
           ssh-keyscan -H kl3xy.dev >> ~/.ssh/known_hosts
           ssh -i $SSH_KEY_PATH -Y cicd@kl3xy.dev << 'EOF'
             cd deploy
-            sudo -S sh deploy.sh << 'USER'
-              $CICD_PASSWORD
-            USER
+            echo "$CICD_PASSWORD" | sudo -S sh deploy.sh
           EOF
         shell: bash
         env:
