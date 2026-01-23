@@ -1,11 +1,11 @@
 <body class="flex flex-col min-h-dvh">
   <nav>
 
-  
+
 
   </nav>
   <main class="flex-grow">
-    <div class="lg:grid lg:grid-cols-[30%_0.1%_70%] lg:flex lg:h-screen lg:overflow-hidden"> 
+    <div class="lg:grid lg:grid-cols-[30%_0.1%_70%] lg:flex lg:h-screen lg:overflow-hidden">
       <div class="p-5 lg:pt-15 bg-linear-180 from-violet-250 text-center to-[var(--mat-sys-gradient-color)]">
         <img class="size-24 lg:size-48 object-cover m-auto rounded-full animate-fadeIn-150 border-2 border-[var(--gradient-col-end)]" src="me.jpg">
         <h1 class="
@@ -17,27 +17,27 @@
           rounded-lg
           text-4xl
           lg:text-5xl
-          font-bold 
+          font-bold
           text-[var(--mat-sys-surface)]
-          bg-linear-65 
+          bg-linear-65
           from-[var(--gradient-col-begin)]
           to-[var(--gradient-col-end)]
           animate-fadeIn-250
           w-[max-content]
           ">Martin Gaffke</h1>
         <h5 class="
-          text-gray-500 font-bold text-2xl 
-          text-center 
+          text-gray-500 font-bold text-2xl
+          text-center
           animate-fadeIn-350
-          bg-linear-65 
+          bg-linear-65
           bg-clip-text
           text-transparent
           from-[var(--gradient-col-begin)]
           to-[var(--gradient-col-end)]
           ">Kl3XY [ˈklɛksi]</h5>
         <h5 class="
-          text-gray-500 font-bold text-2xl 
-          text-center 
+          text-gray-500 font-bold text-2xl
+          text-center
           animate-fadeIn-350
           ">Software Entwickler<br/><span class="text-gray-400">Digitaler Künstler</span></h5>
         <div class="mt-5 pl-15 pr-15 text-center lg:text-left pb-3 animate-fadeIn-350">
@@ -67,7 +67,7 @@
           </div>
         </header>
         <div class="animate-fadeIn-100">
-          <h1 class="text-3xl lg:text-6xl font-bold scroll-m-20" #Github>Repositories</h1>
+          <h1 class="text-3xl lg:text-6xl font-bold scroll-m-20 pt-5" #Github>Repositories</h1>
           <div class="grid grid-cols-1 lg:grid-cols-3 p-5">
             @if(isLoadingRepositories == false) {
               @for (item of Repositories; track item) {
@@ -86,7 +86,7 @@
               <div>Lade Repositories...</div>
               </div>
             }
-            
+
           </div>
         </div>
         <div class="animate-fadeIn-100">
@@ -95,32 +95,6 @@
             <app-game-showcase></app-game-showcase>
           </div>
         </div>
-        <!--
-        <div class="animate-fadeIn-350">
-          <h1 class="text-3xl lg:text-6xl font-bold" #langs>Sprachen</h1>
-          <div>
-            Godot
-          </div>
-          <div>
-            Test
-          </div>
-          <div>
-            Test
-          </div>
-          <div>
-            Test
-          </div>
-          <div>
-            Test
-          </div>
-          <div>
-            Test
-          </div>
-          <div>
-            Test
-          </div>
-        </div>
-        -->
         <div class="animate-fadeIn-350">
           <h1 class="text-3xl lg:text-6xl font-bold" #works>Sonstige Werke</h1>
           <div class="p-5">
@@ -131,7 +105,7 @@
         </div>
         <footer class="bg-[var(--mat-sys-surface)]">
           <p class="p-5 text-center">(C) 2026 Martin Gaffke - All Rights Reserved</p>
-          <p class="p-5 pt-0 text-center">Made with ❤️ in Angular 21 <a>Github Repo</a></p>
+          <p class="p-5 pt-0 text-center">Made with ❤️ in Angular 21 <a class="text-orange-400 underline" href="https://github.com/Kl3XY/Portfolio-Website" target="_blank">Github Repo</a></p>
         </footer>
       </div>
     </div>

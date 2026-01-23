@@ -25,7 +25,18 @@ export class GameShowcase implements OnInit{
   async ngOnInit(): Promise<void> {
     await this.http.get<Root>("https://api.kl3xy.dev/get-games").subscribe((data) => {
       this.games = data.games
-      console.log(this.games)
+      this.games.sort((a, b) => b.downloads_count - a.downloads_count)
+      this.games.sort((n1,n2) => {
+          if (n1.type > n2.type) {
+              return 1;
+          }
+
+          if (n1.type < n2.type) {
+              return -1;
+          }
+
+          return 0;
+      });
       this.cd.markForCheck();
       this.isLoadingGames = false;
     })

@@ -10,7 +10,7 @@
                     <button class="w-[100%] mt-5" matButton="filled">Itch.Io</button>
                 </a>
             </div>
-            <div class="p-5">
+            <div class="p-5 h-auto">
                 <h1 class="
                 text-3xl
                 font-bold 
@@ -21,6 +21,18 @@
                 to-[var(--gradient-col-end)]
                 animate-fadeIn-250">{{item.title}}</h1>
                 <h1>{{item.short_text}}</h1>
+                <div class="pt-5">
+                    @if (item.type != "html") {
+                        <h1 class="
+                        mt-auto
+                        text-gray-500">Downloads: {{item.downloads_count}}</h1>
+                    }
+                    @else {
+                        <h1 class="
+                        mt-auto
+                        text-gray-500">Verfügbar als Browserspiel</h1>
+                    }
+                </div>
             </div>
         </div>
     } 

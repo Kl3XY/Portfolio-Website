@@ -43,3 +43,7 @@
     }
 }
 
+::selection {
+    background-color: var(--mat-sys-primary); /* Die Hintergrundfarbe (z.B. Gelb) */
+    color: #000000;            /* Die Textfarbe beim Markieren (z.B. Schwarz) */
+}
